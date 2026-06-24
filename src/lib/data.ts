@@ -30,7 +30,7 @@ export interface Pillar {
 
 export const stats = [
   { value: "120+", label: "Volunteers" },
-  { value: "9", label: "Projects" },
+  { value: "8", label: "Projects" },
   { value: "All", label: "Open source" },
   { value: "Free", label: "To join" },
 ];
@@ -63,7 +63,6 @@ export const members: Member[] = [
 export const findMember = (id: string) => members.find((m) => m.id === id);
 
 export const projects: Project[] = [
-  { slug: "helpline-mv", name: "Helpline.mv", kind: "Software", desc: "A platform connecting people to scholars and counsellors for confidential appointments.", stack: ["Next.js", "TypeScript", "Supabase"], status: "Active", founderId: "m1", contributors: 8, lookingFor: ["Frontend Developer", "UX Designer", "QA Tester"] },
   { slug: "salah-times-api", name: "Salah Times API", kind: "Software", desc: "A free, accurate prayer-times API for every island and city.", stack: ["Node", "PostgreSQL"], status: "Maintained", founderId: "m2", contributors: 4, lookingFor: ["Backend Developer", "Technical Writer"] },
   { slug: "dhivehi-quran-reader", name: "Dhivehi Quran Reader", kind: "Software", desc: "An open Quran reader with Dhivehi translation and tafsir.", stack: ["React Native"], status: "Seeking devs", founderId: "m3", contributors: 5, lookingFor: ["Mobile Developer", "Translator", "Proofreader"] },
   { slug: "masjid-finder", name: "Masjid Finder", kind: "Software", desc: "Find the nearest mosque and jamaa'ah times wherever you are.", stack: ["Flutter", "Maps"], status: "Active", founderId: "m4", contributors: 6, lookingFor: ["Mobile Developer", "Data Collector"] },
