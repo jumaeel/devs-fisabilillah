@@ -31,7 +31,7 @@ export function SiteFooter() {
               <ul className="mt-3 space-y-2 text-sm text-text-muted">
                 <li><a href="https://github.com" target="_blank" rel="noreferrer" className="hover:text-brand">GitHub</a></li>
                 <li><a href="#" className="hover:text-brand">Discord</a></li>
-                <li><a href="#" className="hover:text-brand">Telegram</a></li>
+                <li><a href="https://t.me/+T7D3S-kX8BDXIRJ3" target="_blank" rel="noreferrer" className="hover:text-brand">Telegram</a></li>
               </ul>
             </div>
           </div>
