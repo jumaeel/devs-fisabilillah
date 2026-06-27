@@ -62,6 +62,25 @@ export const members: Member[] = [
 
 export const findMember = (id: string) => members.find((m) => m.id === id);
 
+export interface TeamMember {
+  name: string;
+  role: string;
+  bio: string;
+}
+
+// Founding team — the brothers who started Devs Fisabilillah.
+export const foundingTeam: TeamMember[] = [
+  { name: "Ahmed Saleem", role: "Founder & Lead", bio: "Started Devs Fisabilillah to gather Muslim builders around beneficial, open-source work." },
+  { name: "Ibrahim Nashid", role: "Co-founder · Engineering", bio: "Shapes the technical direction and keeps the brotherhood's infrastructure reliable." },
+  { name: "Mariyam Sara", role: "Co-founder · Content & Community", bio: "Leads translation, da'wah content and the knowledge circles that bind the community." },
+];
+
+// Shariah advisory board — scholars who guide the community on matters of deen.
+export const shariahBoard: TeamMember[] = [
+  { name: "Sheikh Abdullah Faisal", role: "Shariah Advisor", bio: "Guides the community on fiqh of work, contracts and earning a halal livelihood." },
+  { name: "Sheikh Hassan Moosa", role: "Shariah Advisor", bio: "Advises on da'wah content, ensuring authenticity and adherence to the Quran and Sunnah." },
+];
+
 export const projects: Project[] = [
   { slug: "salah-times-api", name: "Salah Times API", kind: "Software", desc: "A free, accurate prayer-times API for every island and city.", stack: ["Node", "PostgreSQL"], status: "Maintained", founderId: "m2", contributors: 4, lookingFor: ["Backend Developer", "Technical Writer"] },
   { slug: "dhivehi-quran-reader", name: "Dhivehi Quran Reader", kind: "Software", desc: "An open Quran reader with Dhivehi translation and tafsir.", stack: ["React Native"], status: "Seeking devs", founderId: "m3", contributors: 5, lookingFor: ["Mobile Developer", "Translator", "Proofreader"] },

@@ -22,6 +22,7 @@ export function SiteFooter() {
               <ul className="mt-3 space-y-2 text-sm text-text-muted">
                 <li><Link href="/#pillars" className="hover:text-brand">What we do</Link></li>
                 <li><Link href="/projects" className="hover:text-brand">Projects</Link></li>
+                <li><Link href="/about" className="hover:text-brand">About</Link></li>
                 <li><Link href="/#faq" className="hover:text-brand">FAQ</Link></li>
                 <li><Link href="/join" className="hover:text-brand">Join us</Link></li>
               </ul>

@@ -10,6 +10,7 @@ const LINKS = [
   { href: "/#pillars", label: "How it works" },
   { href: "/projects", label: "Projects" },
   { href: "/people", label: "People" },
+  { href: "/about", label: "About" },
   { href: "/#faq", label: "FAQ" },
 ];
 
