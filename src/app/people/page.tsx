@@ -23,9 +23,57 @@ export default function PeoplePage() {
         </Link>
       </div>
 
+      <Leaderboard />
+
       <Group title="Developers" people={devs} />
       <Group title="Content Volunteers" people={content} />
     </div>
+  );
+}
+
+const RANK_TONE = [
+  "bg-amber-100 text-amber-800 dark:bg-amber-950/50 dark:text-amber-300",
+  "bg-slate-200 text-slate-700 dark:bg-slate-800 dark:text-slate-300",
+  "bg-orange-100 text-orange-800 dark:bg-orange-950/50 dark:text-orange-300",
+];
+
+function Leaderboard() {
+  const ranked = members
+    .map((m) => ({ member: m, count: projectsByFounder(m.id).length }))
+    .filter((r) => r.count > 0)
+    .sort((a, b) => b.count - a.count);
+
+  if (ranked.length === 0) return null;
+
+  return (
+    <section className="mt-10">
+      <h2 className="font-display text-2xl font-bold">Leaderboard</h2>
+      <p className="mt-1 text-sm text-text-muted">Brothers and sisters leading the most projects.</p>
+      <Card className="mt-4 divide-y divide-border overflow-hidden">
+        {ranked.map(({ member: m, count }, i) => (
+          <Link
+            key={m.id}
+            href="/projects"
+            className="flex items-center gap-4 px-4 py-3.5 transition hover:bg-surface-2"
+          >
+            <span className={cn("flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-sm font-bold", RANK_TONE[i] ?? "bg-surface-2 text-text-muted")}>
+              {i + 1}
+            </span>
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-emerald-500 to-emerald-700 text-sm font-bold text-white">
+              {initials(m.name)}
+            </span>
+            <div className="min-w-0">
+              <p className="truncate font-semibold">{m.name}</p>
+              <p className="truncate text-xs text-text-muted">{m.role}</p>
+            </div>
+            <span className="ml-auto text-right">
+              <span className="font-display text-xl font-extrabold text-brand">{count}</span>
+              <span className="ml-1.5 text-xs text-text-muted">project{count > 1 ? "s" : ""}</span>
+            </span>
+          </Link>
+        ))}
+      </Card>
+    </section>
   );
 }
 
